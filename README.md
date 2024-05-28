@@ -1,1 +1,3 @@
-# Software testing fundamentals task
+# AutomatedTestinginJavaScript
+
+Projects and codes from the course [Specialization] Automated Testing in JavaScript
