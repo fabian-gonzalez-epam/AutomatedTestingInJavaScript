@@ -1,6 +1,7 @@
 describe("Test suite", () => {
     
-    /* it("First test", async function() {
+    it("First test", async function() {
+        this.retries(1);
         await browser.url("https://id.atlassian.com/login?application=trello&continue=https%3A%2F%2Ftrello.com%2Fauth%2Fatlassian%2Fcallback%3Fdisplay%3DeyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%253D%253D&display=eyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%3D%3D");
         await $("input[name='username']").setValue("fabian@epam.com");
         await $("//button[@id='login-submit']").click();
@@ -16,7 +17,7 @@ describe("Test suite", () => {
         await $("//button[@id='login-submit']").click();
         const emailError = await $("span.css-xal9c7");
         expect (await emailError.getText()).toEqual("Incorrect email address and / or password. If you recently migrated your Trello account to an Atlassian account, you will need to use your Atlassian account password. Alternatively, you can get help logging in.")
-    });  */
+    }); 
     
     it("Second test", async function() {
         this.retries(1);
@@ -40,7 +41,7 @@ describe("Test suite", () => {
         expect (await page_title).toBeDisplayed();
     });
 
-    /* it("Third test", async function() {
+    it("Third test", async function() {
         this.retries(1);
         const add_board_button = await $("//button[@class='d4KYiLd7mYtzsQ YeuvAyHAsucO_n bxgKMAm3lq5BpA SEj5vUdI3VvxDc']")
         await expect (add_board_button).toBeClickable();
@@ -166,5 +167,5 @@ describe("Test suite", () => {
         await $("//button[text()='Save']").click()
         const error_message = await $("//span[text()='Short name is taken.']");
         await expect (error_message).toBeDisplayed()    
-    }); */
+    });
 })
