@@ -52,13 +52,17 @@ exports.config = {
     //
     capabilities: [{
         
-        /* browserName: 'chrome',
+        browserName: 'chrome',
         'goog:chromeOptions': {
             args: ['--start-maximized']
-        }  */
+        },
+        /* browserName: 'firefox',
+        'moz:firefoxOptions': {
+            args: ['--start-maximized']
+        } */
         
         
-        myChromeBrowser: {
+        /* myChromeBrowser: {
             capabilities: {
                 browserName: 'chrome',
                 'goog:chromeOptions': {
@@ -67,7 +71,7 @@ exports.config = {
                 }
             }
             
-        },
+        },  */
         /* myFirefoxBrowser: {
             capabilities: {
                 browserName: 'firefox',
@@ -77,7 +81,7 @@ exports.config = {
                 }
             }
         }, */
-        myEdgeBrowser: {
+        /* myEdgeBrowser: {
             capabilities: {
                 browserName: 'msedge',
                 'ms:edgeOptions': {
@@ -85,7 +89,7 @@ exports.config = {
                     args: ['--start-maximized']
                 }
             }
-        }
+        } */
         
     }],
 

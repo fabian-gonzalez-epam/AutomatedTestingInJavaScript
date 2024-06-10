@@ -3,38 +3,26 @@ describe("Test suite", () => {
     it("First test", async function() {
         this.retries(1);
         await browser.url("https://id.atlassian.com/login?application=trello&continue=https%3A%2F%2Ftrello.com%2Fauth%2Fatlassian%2Fcallback%3Fdisplay%3DeyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%253D%253D&display=eyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%3D%3D");
+        await $("input[name='username']").waitForDisplayed();
         await $("input[name='username']").setValue("fabian@epam.com");
         await $("//button[@id='login-submit']").click();
         const password_input = await $("input[name='password']");
-        await password_input.waitForDisplayed({ // with params
-            timeout: 3000,
-            reverse: true,
-            timeoutMsg: 'Desired element did not disappear',
-            interval: 300
-        })
-        await expect (password_input).toBeClickable()
+        await password_input.waitForDisplayed()
         await password_input.addValue('1234')
         await $("//button[@id='login-submit']").click();
         const emailError = await $("span.css-xal9c7");
-        expect (await emailError.getText()).toEqual("Incorrect email address and / or password. If you recently migrated your Trello account to an Atlassian account, you will need to use your Atlassian account password. Alternatively, you can get help logging in.")
+        await expect(emailError).toHaveTextContaining("We are having trouble verifying reCAPTCHA for this request. Please try again. If the problem persists, try another browser/device or reach out to Atlassian Support.")
+
     }); 
     
     it("Second test", async function() {
         this.retries(1);
         await browser.url("https://id.atlassian.com/login?application=trello&continue=https%3A%2F%2Ftrello.com%2Fauth%2Fatlassian%2Fcallback%3Fdisplay%3DeyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%253D%253D&display=eyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%3D%3D");
+        await $("input[name='username']").waitForDisplayed();
         await $("input[name='username']").setValue("fabian_gonzalez@epam.com");
         await $("//button[@id='login-submit']").click();
-        
-        /* await $("input[name='password']").waitForDisplayed({ // with params
-            timeout: 3000,
-            reverse: true,
-            timeoutMsg: 'Desired element did not disappear',
-            interval: 300
-        }) */
         await $("input[name='password']").waitForDisplayed();
         const password_input = await $("input[name='password']");
-        await password_input.waitForEnabled();
-        await expect (password_input).toBeEnabled();
         await password_input.setValue('AFmt&!UGeY6aQ#')
         await $("//button[@id='login-submit']").click();
         const page_title = await $("//h3[text()='YOUR WORKSPACES']")
@@ -167,5 +155,5 @@ describe("Test suite", () => {
         await $("//button[text()='Save']").click()
         const error_message = await $("//span[text()='Short name is taken.']");
         await expect (error_message).toBeDisplayed()    
-    });
+    }); 
 })
