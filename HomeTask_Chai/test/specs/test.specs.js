@@ -38,11 +38,11 @@ describe("Test suite", () => {
 
     it("Third test", async function() {
         this.retries(1);
-        const add_board_button = await $("button.d4KYiLd7mYtzsQ.YeuvAyHAsucO_n.bxgKMAm3lq5BpA.SEj5vUdI3VvxDc")
+        const add_board_button = await $("div.board-tile.mod-add")
         await (add_board_button).waitForEnabled();
-        //await expect(add_board_button).to.exists;
+        await expect(add_board_button).to.exists;
         add_board_button.click();
-        await $("button.gJDsPins_eYkBM").click();
+        await $("button.hY6kPzdkHFJhfG.bxgKMAm3lq5BpA.SdamsUKjxSBwGb.SEj5vUdI3VvxDc").click();
         const board_title_input = await $("input.nch-textfield__input.lsOhPsHuxEMYEb.lsOhPsHuxEMYEb.VkPAAkbpkKnPst");
         await (board_title_input).waitForDisplayed();
         //await expect (board_title_input).toBeDisplayed()
@@ -56,19 +56,20 @@ describe("Test suite", () => {
     
     it("Fourth test", async function() {
         this.retries(1);
-        await $("button.d4KYiLd7mYtzsQ.YeuvAyHAsucO_n.bxgKMAm3lq5BpA.SEj5vUdI3VvxDc").click();
+        await $("button.o7EAj6bxSlZptk.d4KYiLd7mYtzsQ.bxgKMAm3lq5BpA.SEj5vUdI3VvxDc").click();
         await $("button.gJDsPins_eYkBM").click();
         const board_title_input = await $("input.nch-textfield__input.lsOhPsHuxEMYEb.lsOhPsHuxEMYEb.VkPAAkbpkKnPst");
         await (board_title_input).waitForEnabled()
         await board_title_input.setValue('Board 11')
         //expect (await $("//button[text()='Upgrade Workspace']")).toBeDisplayed();
-        await $("//button[text()='Upgrade Workspace']").waitForDisplayed();
-        expect(await $("//button[text()='Upgrade Workspace']").isDisplayed()).to.be.true;
+        await $("button.bxgKMAm3lq5BpA.SdamsUKjxSBwGb.PnEv2xIWy3eSui.SEj5vUdI3VvxDc").waitForDisplayed();
+        await expect(await $("button.bxgKMAm3lq5BpA.SdamsUKjxSBwGb.PnEv2xIWy3eSui.SEj5vUdI3VvxDc").isDisplayed()).to.be.true;
     });
 
     it("Fifth test", async function() {
         this.retries(1);
-        await $("button.YeuvAyHAsucO_n.js-open-header-member-menu.uKet9wgIeMCzrD.bxgKMAm3lq5BpA.SEj5vUdI3VvxDc").click();
+        await browser.url("https://trello.com/u/fabiangonzalez195/boards");
+        await $("div.B1uWdim9Jd0dJ9").click();
         await $("//span[text()='Profile and visibility']").click();
         const username_input = await $("input[name='username']");
         await (username_input).waitForEnabled()
@@ -80,15 +81,16 @@ describe("Test suite", () => {
 
     it("Sixth test", async function() {
         this.retries(1);
-        await $("button.YeuvAyHAsucO_n.js-open-header-member-menu.uKet9wgIeMCzrD.bxgKMAm3lq5BpA.SEj5vUdI3VvxDc").click();
-        await $("//span[text()='Profile and visibility']").click();
+        //await $("div.B1uWdim9Jd0dJ9").click();
+        //await $("//span[text()='Profile and visibility']").click();
         const username_input = await $("input[name='username']");
         await (username_input).waitForEnabled()
         await username_input.setValue('')
         await username_input.setValue('fabiangonzalez')
         await $("//button[text()='Save']").click()
         await $("p#SaveProfileError_Field_username").waitForDisplayed();
-        expect(await $("p#SaveProfileError_Field_username").isDisplayed()).to.be.true;
+        await $("p#SaveProfileError_Field_username").waitForEnabled();
+        await expect(await $("p#SaveProfileError_Field_username.DAlSQcdYjddT3r").isDisplayed()).to.be.true;
     });
 
     it("Seventh test", async function() {
