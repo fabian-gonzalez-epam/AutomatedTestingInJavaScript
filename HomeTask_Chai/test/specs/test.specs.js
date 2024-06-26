@@ -6,10 +6,12 @@ describe("Test suite", () => {
 
         await browser.url("https://id.atlassian.com/login?application=trello&continue=https%3A%2F%2Ftrello.com%2Fauth%2Fatlassian%2Fcallback%3Fdisplay%3DeyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%253D%253D&display=eyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%3D%3D");
         await $("input[name='username']").waitForDisplayed();
+        await $("input[name='username']").waitForEnabled();
         await $("input[name='username']").setValue("fabian@epam.com");
         await $("//button[@id='login-submit']").click();
         const password_input = await $("input[name='password']");
         await password_input.waitForDisplayed()
+        await password_input.waitForEnabled()
         await password_input.addValue('1234')
         await $("//button[@id='login-submit']").click();
         const emailError = await $("span.css-xal9c7");
@@ -24,27 +26,32 @@ describe("Test suite", () => {
         this.retries(1);
         await browser.url("https://id.atlassian.com/login?application=trello&continue=https%3A%2F%2Ftrello.com%2Fauth%2Fatlassian%2Fcallback%3Fdisplay%3DeyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%253D%253D&display=eyJ2ZXJpZmljYXRpb25TdHJhdGVneSI6InNvZnQifQ%3D%3D");
         await $("input[name='username']").waitForDisplayed();
+        await $("input[name='username']").waitForEnabled();
         await $("input[name='username']").setValue("fabian_gonzalez@epam.com");
         await $("//button[@id='login-submit']").click();
         await $("input[name='password']").waitForDisplayed();
+        await $("input[name='password']").waitForEnabled();
         const password_input = await $("input[name='password']");
         await password_input.setValue('AFmt&!UGeY6aQ#')
         await $("//button[@id='login-submit']").click();
         const page_title = await $("//h3[text()='YOUR WORKSPACES']")
         //expect(page_title).to.exists;
         await (page_title).waitForDisplayed();
+        await (page_title).waitForEnabled();
         expect(await page_title.isDisplayed()).to.be.true;
     });
 
     it("Third test", async function() {
         this.retries(1);
         const add_board_button = await $("div.board-tile.mod-add")
+        await (add_board_button).waitForDisplayed();
         await (add_board_button).waitForEnabled();
         await expect(add_board_button).to.exists;
         add_board_button.click();
         await $("button.hY6kPzdkHFJhfG.bxgKMAm3lq5BpA.SdamsUKjxSBwGb.SEj5vUdI3VvxDc").click();
         const board_title_input = await $("input.nch-textfield__input.lsOhPsHuxEMYEb.lsOhPsHuxEMYEb.VkPAAkbpkKnPst");
         await (board_title_input).waitForDisplayed();
+        await (board_title_input).waitForEnabled();
         //await expect (board_title_input).toBeDisplayed()
         //await expect (board_title_input).toBeClickable()
         await board_title_input.setValue('Board 10')
@@ -76,6 +83,7 @@ describe("Test suite", () => {
         await username_input.setValue('fabiangonzalez195')
         await $("//button[text()='Save']").click();
         await $("//span[text()='Saved']").waitForDisplayed();
+        await $("//span[text()='Saved']").waitForEnabled();
         expect(await $("//span[text()='Saved']").isDisplayed()).to.be.true;
     });
 
@@ -98,6 +106,7 @@ describe("Test suite", () => {
         await browser.url("https://trello.com/u/fabiangonzalez195/boards");
         await $("//div[text()='Board 10']").click();
         const add_list_button = await $("//button[text()='Add a list']");
+        await (add_list_button).waitForDisplayed()
         await (add_list_button).waitForEnabled()
         add_list_button.click();
         const add_list_form = await $("//textarea[@class='oe8RymzptORQ7h']");
@@ -115,6 +124,7 @@ describe("Test suite", () => {
         await $("//div[text()='Board 10']").waitForEnabled()
         await $("//div[text()='Board 10']").click();
         const add_list_button = await $("//button[text()='Add a list']");
+        await (add_list_button).waitForDisplayed()
         await (add_list_button).waitForEnabled()
         add_list_button.click();
         const add_list_form = await $("//textarea[@class='oe8RymzptORQ7h']");
@@ -136,10 +146,12 @@ describe("Test suite", () => {
         await browser.url("https://trello.com/u/fabiangonzalez195/boards");
         const settings_button = await $("//span[text()='Settings']"); 
         await (settings_button).waitForDisplayed();
+        //await (settings_button).waitForEnabled();
         settings_button.click()
         await $("button.Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc").click();
         const workspace_name = await $("input#name.eTwcS5CiH1AoFb");
         await (workspace_name).waitForDisplayed()
+        //await (settings_button).waitForEnabled();
         //await expect (workspace_name).toBeClickable()
         await workspace_name.setValue('userworkspace1332836');
         await $("//button[text()='Save']").click()
@@ -150,15 +162,18 @@ describe("Test suite", () => {
         await browser.url("https://trello.com/u/fabiangonzalez195/boards");
         settings_button = await $("//span[text()='Settings']"); 
         await (settings_button).waitForDisplayed();
+        //await (settings_button).waitForEnabled();
         settings_button.click()
         await $("button.Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc").click();
         workspace_name = await $("input#name.eTwcS5CiH1AoFb");
         await (workspace_name).waitForDisplayed();
+        //await (workspace_name).waitForEnabled();
         await workspace_name.setValue('');
         await workspace_name.setValue('userworkspace');
         await $("//button[text()='Save']").click()
         const error_message = await $("//span[text()='Short name is taken.']");
         await error_message.waitForDisplayed();
+        await error_message.waitForEnabled();
         expect(await error_message.isDisplayed()).to.be.true;    
     }); 
 })
