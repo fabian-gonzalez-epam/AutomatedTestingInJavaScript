@@ -1,6 +1,7 @@
 const Interactions = require("../actions/interactions");
 const Interrogations = require("../actions/interrogations");
 
+
 class BaseActor {
     constructor(username, password) {
         this.username = username;
@@ -11,6 +12,9 @@ class BaseActor {
 
     login() {
         this.interaction.login(this.username, this.password);
+    }
+    addBoard() {
+        this.interaction.addBoard();
     }
     checkIfEnter() {
         return this.interrogation.checkIfEnter()

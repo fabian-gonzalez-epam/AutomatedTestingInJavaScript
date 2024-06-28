@@ -9,7 +9,6 @@ class DashboardPage extends BasePage {
         this.header = new Header();
         this.addBoard = new AddBoard();
         this.sideMenu = new SideMenu();
-        console.log("constructor")
     }
 }
 

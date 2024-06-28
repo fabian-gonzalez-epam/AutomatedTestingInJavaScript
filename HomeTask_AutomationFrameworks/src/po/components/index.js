@@ -4,6 +4,8 @@ const LoginForm = require('./login/login-form.component');
 const ErrorBox = require('./login/error-box.component');
 const BoardsMenu = require('./dashboard/boards-menu.component');
 const AddBoard = require('./dashboard/add-board.component');
+const BoardCanvas = require('./board/board-canvas.component');
+const UsernameForm = require('./profile/username-form.component');
 
 module.exports = {
     LoginForm,
@@ -11,5 +13,7 @@ module.exports = {
     BoardsMenu,
     Header,
     AddBoard,
-    SideMenu
+    SideMenu,
+    BoardCanvas,
+    UsernameForm
 }

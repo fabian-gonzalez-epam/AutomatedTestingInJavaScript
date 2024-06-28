@@ -8,9 +8,7 @@ class EpamerActor extends BaseActor {
         //this.interaction = new Interactions()
         //this.interrogation = new Interrogations()
     }
-    addBoard() {
-        this.interaction.addBoard();
-    }
+    
     checkBoardExist() {
         this.interrogation.checkBoardExist();
     }
