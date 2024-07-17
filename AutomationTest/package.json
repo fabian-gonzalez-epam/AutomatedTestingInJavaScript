@@ -1,0 +1,23 @@
+{
+  "name": "Home_Task",
+  "version": "0.0.1",
+  "description": "pom with wdio",
+  "private": true,
+  "scripts": {
+    "ui_test": "wdio run src/config/ui.conf.js",
+    "api_test": "wdio run src/config/api.conf.js",
+    "test": "npm run ui_test && npm run api_test"
+  },
+  "devDependencies": {
+    "@wdio/cli": "^8.39.0",
+    "@wdio/local-runner": "^8.39.0",
+    "@wdio/mocha-framework": "^8.39.0",
+    "@wdio/spec-reporter": "^8.39.0",
+    "@wdio/visual-service": "^5.1.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "chai": "^5.1.1",
+    "wdio-html-nice-reporter": "^8.1.6"
+  }
+}
