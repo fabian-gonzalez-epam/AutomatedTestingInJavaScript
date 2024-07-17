@@ -143,8 +143,8 @@ exports.config = {
         ["html-nice", 
         {
             outputDir: './reports/html-reports/',
-            filename: 'report.html',
-            reportTitle: 'Test Report Title',
+            filename: 'report_api.html',
+            reportTitle: 'Test Report API',
             linkScreenshots: true,
             //to show the report in a browser when done
             showInBrowser: true,
