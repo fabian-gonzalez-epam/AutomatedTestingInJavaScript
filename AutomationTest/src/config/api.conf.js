@@ -50,8 +50,8 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'edge',
-        'ms:edgeOptions': {
+        browserName: 'chrome',
+        'goog:chromeOptions': {
             args: ['--start-maximized']
         },
     }],
