@@ -149,7 +149,7 @@ exports.config = {
             showInBrowser: true,
             collapseTests: false,
             useOnAfterCommandForScreenshot: false
-        }]
+        }],
         ["allure", 
             {
                 outputDir: 'allure-results',
