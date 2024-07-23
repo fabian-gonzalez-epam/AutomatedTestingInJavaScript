@@ -4,20 +4,27 @@
   "description": "pom with wdio",
   "private": true,
   "scripts": {
-    "ui_test": "wdio run src/config/ui.conf.js",
-    "api_test": "wdio run src/config/api.conf.js",
-    "test": "npm run ui_test && npm run api_test"
+      "ui_test": "wdio run src/config/ui.conf.js",
+      "api_test": "wdio run src/config/api.conf.js",
+      "test": "npm run ui_test && npm run api_test",
+      "linters": "npx prettier . --write && npx esLint"
   },
   "devDependencies": {
-    "@wdio/cli": "^8.39.0",
-    "@wdio/local-runner": "^8.39.0",
-    "@wdio/mocha-framework": "^8.39.0",
-    "@wdio/spec-reporter": "^8.39.0",
-    "@wdio/visual-service": "^5.1.0"
+      "@eslint/js": "^9.7.0",
+      "@wdio/allure-reporter": "^8.39.0",
+      "@wdio/cli": "^8.39.1",
+      "@wdio/local-runner": "^8.39.1",
+      "@wdio/mocha-framework": "^8.39.0",
+      "@wdio/spec-reporter": "^8.39.0",
+      "@wdio/visual-service": "^5.1.0",
+      "allure-commandline": "^2.29.0",
+      "eslint": "^9.7.0",
+      "globals": "^15.8.0",
+      "prettier": "3.3.3"
   },
   "dependencies": {
-    "axios": "^1.7.2",
-    "chai": "^5.1.1",
-    "wdio-html-nice-reporter": "^8.1.6"
+      "axios": "^1.7.2",
+      "chai": "^5.1.1",
+      "wdio-html-nice-reporter": "^8.1.6"
   }
 }
