@@ -1,3 +1,5 @@
 reports/*
 src/config/*
-**/.mjs
+**/*.config.mjs
+package.json
+package-lock.json
