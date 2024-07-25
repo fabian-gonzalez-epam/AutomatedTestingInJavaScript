@@ -3,13 +3,13 @@ const LoginPage = require('./login.page');
 const BoardPage = require('./board.page');
 const ProfilePage = require('./profile.page');
 
-function pages(name) {
+function pages(name){
     const items = {
         dashboard: new DashboardPage(),
         login: new LoginPage(),
         board: new BoardPage(),
-        profile: new ProfilePage(),
-    };
+        profile: new ProfilePage()
+    }
     return items[name.toLowerCase()];
 }
 
@@ -18,5 +18,5 @@ module.exports = {
     LoginPage,
     BoardPage,
     ProfilePage,
-    pages,
-};
+    pages
+}
