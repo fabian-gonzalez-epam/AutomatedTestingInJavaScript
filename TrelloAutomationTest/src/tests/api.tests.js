@@ -46,10 +46,12 @@ describe("Trello Api", () => {
                 expect(response.status).to.equal(200);
                 expect(response.header).to.include("application/json; charset=utf-8");
                 
-            })
-            .catch((error) => {
-                console.log(error);
+            }).catch((error) => {
+                
         });
+           /*  .catch((error) => {
+                console.log(error);
+        }); */
     });
 
     it("Update Board", async function() {

@@ -152,7 +152,7 @@ exports.config = {
         }],
         ["allure", 
             {
-                outputDir: './reports/allure-results',
+                outputDir: './reports/allure-results/',
                 disableWebdriverStepsReporting: true,
                 disableWebdriverScreenshotsReporting: true,
         }]

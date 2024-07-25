@@ -1,12 +1,17 @@
+import js from "@eslint/js";
+import eslintPluginExample from "./plugins/eslint-plugin-example.js";
+
 export default [
+    
+    js.configs.recommended,
     {
-        files: ['src/**/*.js'],
-        ignores: ['**/*.conf.js'],
+        
+        ignores: ['reports/*', 'src/config', 'src/enviroments', 'src/po'],
+        plugins: {"example": eslintPluginExample},
+        files: ['src/tests/*'],
         rules: {
-            'no-undef': 'warn',
-            'no-unused-vars': 'warn',
-            //'prefer-const': ['warn', { ignoreReadBeforeAssign: true }],
-            semi: ['warn', 'never'],
+            "example/no-empty-catch": "warn",
+            "no-undef" : "off", 
         },
     },
 ];

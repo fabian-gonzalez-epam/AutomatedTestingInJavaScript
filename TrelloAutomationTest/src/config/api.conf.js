@@ -52,7 +52,7 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--start-maximized']
+            args: ['--headless']
         },
     }],
 
@@ -151,6 +151,12 @@ exports.config = {
             collapseTests: false,
             //to turn on screenshots after every test
             useOnAfterCommandForScreenshot: false
+        }],
+        ["allure", 
+            {
+                outputDir: './reports/allure-results/',
+                disableWebdriverStepsReporting: true,
+                disableWebdriverScreenshotsReporting: true,
         }]
     ],
 
