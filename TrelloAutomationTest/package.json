@@ -30,9 +30,5 @@
     "chai": "^5.1.1",
     "prettier-plugin-gherkin": "^2.4.0",
     "wdio-html-nice-reporter": "^8.1.6"
-  },
-  /* "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
-  } */
+  }
 }
