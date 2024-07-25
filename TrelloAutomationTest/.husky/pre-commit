@@ -2,4 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 cd TrelloAutomationTest
 npm run linters
-git update-index --again
+git add .
