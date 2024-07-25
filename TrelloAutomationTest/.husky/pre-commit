@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 cd TrelloAutomationTest
-npm run linters
+npm run pre-commit
 git add .

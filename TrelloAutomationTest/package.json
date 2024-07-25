@@ -8,7 +8,8 @@
     "api_test": "wdio run src/config/api.conf.js",
     "test": "npm run ui_test && npm run api_test",
     "linters": "npx prettier . --write && npx esLint",
-    "prepare": "cd .. && husky install TrelloAutomationTest/.husky"
+    "prepare": "cd .. && husky install TrelloAutomationTest/.husky",
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
@@ -30,5 +31,10 @@
     "chai": "^5.1.1",
     "prettier-plugin-gherkin": "^2.4.0",
     "wdio-html-nice-reporter": "^8.1.6"
+  },
+  "lint-staged": {
+    "src/**/*.{js,json}":[
+      "npm run linter"
+    ]
   }
 }
