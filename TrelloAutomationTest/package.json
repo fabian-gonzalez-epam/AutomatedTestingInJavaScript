@@ -7,8 +7,7 @@
     "ui_test": "wdio run src/config/ui.conf.js",
     "api_test": "wdio run src/config/api.conf.js",
     "test": "npm run ui_test && npm run api_test",
-    "linters": "npx prettier . --write && npx esLint",
-    "prepare": "cd .. && husky TrelloAutomationTest/.husky && husky install"
+    "linters": "npx prettier . --write && npx esLint"
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
@@ -30,5 +29,11 @@
     "chai": "^5.1.1",
     "prettier-plugin-gherkin": "^2.4.0",
     "wdio-html-nice-reporter": "^8.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"[Husky] pre-commit\""
+    }
   }
+
 }
