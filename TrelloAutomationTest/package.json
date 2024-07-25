@@ -8,7 +8,7 @@
     "api_test": "wdio run src/config/api.conf.js",
     "test": "npm run ui_test && npm run api_test",
     "linters": "npx prettier . --write && npx esLint",
-    "prepare": "cd .. && husky TrelloAutomationTest/.husky"
+    "prepare": "cd .. && husky TrelloAutomationTest/.husky && husky install"
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
@@ -21,7 +21,7 @@
     "allure-commandline": "^2.29.0",
     "eslint": "^9.7.0",
     "globals": "^15.8.0",
-    "husky": "^9.1.2",
+    "husky": "^8.0.3",
     "lint-staged": "^15.2.7",
     "prettier": "3.3.3"
   },
