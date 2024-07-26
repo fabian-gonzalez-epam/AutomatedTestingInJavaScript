@@ -15,5 +15,5 @@ module.exports = {
     AddBoard,
     SideMenu,
     BoardCanvas,
-    UsernameForm,
-};
+    UsernameForm
+}
