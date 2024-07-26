@@ -1,20 +1,18 @@
-const BaseComponent = require("../common/base.component");
+const BaseComponent = require('../common/base.component');
 
 class LoginFormComponent extends BaseComponent {
     constructor() {
-        super('form#form-login')
+        super('form#form-login');
     }
-    get submitButton () {
+    get submitButton() {
         return this.rootEl.$('button#login-submit');
     }
-
-    
 
     input(name) {
         const selectors = {
             username: 'input#username',
-            password: 'input#password'
-        }
+            password: 'input#password',
+        };
         return this.rootEl.$(selectors[name.toLowerCase()]);
     }
 }
