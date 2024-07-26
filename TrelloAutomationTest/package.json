@@ -33,7 +33,7 @@
     "wdio-html-nice-reporter": "^8.1.6"
   }, 
   "lint-staged": {
-    "*.js": [
+    "*.{js,feature}": [
       "npm run linters"
     ]
   }
