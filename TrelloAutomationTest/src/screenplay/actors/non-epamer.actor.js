@@ -1,8 +1,8 @@
-const BaseActor = require('./base.actor');
+const BaseActor = require("./base.actor");
 
 class NonEpamerActor extends BaseActor {
     constructor() {
-        super('fabian@epam.com', '1234');
+        super("fabian@epam.com", "1234")
     }
 }
 
