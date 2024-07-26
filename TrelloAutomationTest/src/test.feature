@@ -7,9 +7,9 @@ Feature: accountability
     Scenario: Check accountability
         # Insert fixtures
         Given the following fixtures files are loaded:
-            | 10.contracts.yml |
-            | 20.wallet.yml    |
-            | 30.tax.yml       |
+            | 10.contracts.yml      |
+            | 20.wallet.yml         |
+            | 30.tax.yml            |
 
         Given I inject the header "authorization" with value 'Bearer some-token'
 
