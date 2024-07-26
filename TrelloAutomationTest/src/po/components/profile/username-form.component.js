@@ -1,23 +1,21 @@
-const BaseComponent = require("../common/base.component");
+const BaseComponent = require('../common/base.component');
 
 class UsernameFormComponent extends BaseComponent {
     constructor() {
-        super('form.cwNe5VAI66iHYX')
+        super('form.cwNe5VAI66iHYX');
     }
-    get input () {
+    get input() {
         return this.rootEl.$("input[name='username']");
     }
-    get saveButton () {
+    get saveButton() {
         return this.rootEl.$("//button[text()='Save']");
     }
-    get successLabel () {
+    get successLabel() {
         return this.rootEl.$("//span[text()='Saved']");
     }
-    get errorLabel () {
-        return this.rootEl.$("p#SaveProfileError_Field_username");
+    get errorLabel() {
+        return this.rootEl.$('p#SaveProfileError_Field_username');
     }
-    
-
 }
 
 module.exports = UsernameFormComponent;
