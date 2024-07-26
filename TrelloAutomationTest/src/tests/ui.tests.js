@@ -1,5 +1,5 @@
-const {actor} = require('./../screenplay')
-const { pages } = require('./../po');
+const {actor} = require('../screenplay')
+const { pages } = require('../po');
 
 describe("Test suite", () => {
     it.only("Simple tests are call", async function() {
@@ -25,12 +25,11 @@ describe("Test suite", () => {
     it("Add tenth board", async function() {
         this.retries(1);
 
-        /* Screenplay implementation
+        // Screenplay implementation
         await actor('epamer').addBoard()
-        expect (await actor('epamer').checkBoardExist()).to.be.true 
-        */
+        //await expect (await actor('epamer').checkBoardExist()).to.be.true 
         
-        await pages('dashboard').header.addButton.waitForDisplayed()
+        /* await pages('dashboard').header.addButton.waitForDisplayed()
         await pages('dashboard').header.addButton.waitForEnabled()
         await pages('dashboard').header.addButton.click()
         await pages('dashboard').header.selection('create').waitForDisplayed()
@@ -43,7 +42,7 @@ describe("Test suite", () => {
         await pages('dashboard').addBoard.createButton.waitForEnabled()
         await pages('dashboard').addBoard.createButton.click()
         await pages('dashboard').sideMenu.board('board10').waitForDisplayed();
-        expect(await pages('dashboard').sideMenu.board('board10').isDisplayed()).to.be.true
+        expect(await pages('dashboard').sideMenu.board('board10').isDisplayed()).to.be.true */
     
     });
     

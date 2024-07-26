@@ -12,6 +12,9 @@ class EpamerActor extends BaseActor {
     checkBoardExist() {
         this.interrogation.checkBoardExist();
     }
+    addBoard() {
+        this.interaction.addBoard();
+    }
 }
 
 module.exports = EpamerActor;

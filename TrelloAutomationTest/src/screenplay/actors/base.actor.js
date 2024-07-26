@@ -13,9 +13,7 @@ class BaseActor {
     login() {
         this.interaction.login(this.username, this.password);
     }
-    addBoard() {
-        this.interaction.addBoard();
-    }
+    
     checkIfEnter() {
         return this.interrogation.checkIfEnter()
     }
