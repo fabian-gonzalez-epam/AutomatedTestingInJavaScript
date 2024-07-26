@@ -34,7 +34,8 @@
   }, 
   "lint-staged": {
     "*.{js,feature}": [
-      "npm run linters"
+      "npm run linters",
+      "git add ."
     ]
   }
 }
