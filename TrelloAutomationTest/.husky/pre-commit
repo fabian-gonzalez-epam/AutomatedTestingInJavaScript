@@ -1,5 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 cd TrelloAutomationTest
-git add -A
+
+git add *
 npm run lint-staged
