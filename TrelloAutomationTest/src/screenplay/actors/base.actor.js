@@ -1,13 +1,12 @@
-const Interactions = require("../actions/interactions");
-const Interrogations = require("../actions/interrogations");
-
+const Interactions = require('../actions/interactions');
+const Interrogations = require('../actions/interrogations');
 
 class BaseActor {
     constructor(username, password) {
         this.username = username;
         this.password = password;
-        this.interaction = new Interactions()
-        this.interrogation = new Interrogations()
+        this.interaction = new Interactions();
+        this.interrogation = new Interrogations();
     }
 
     login() {
@@ -15,13 +14,11 @@ class BaseActor {
     }
     
     checkIfEnter() {
-        return this.interrogation.checkIfEnter()
+        return this.interrogation.checkIfEnter();
     }
     checkIfNoEnter() {
-        return this.interrogation.checkIfNoEnter()
+        return this.interrogation.checkIfNoEnter();
     }
-    
-
 }
 
 module.exports = BaseActor;

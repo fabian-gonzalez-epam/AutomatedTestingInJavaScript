@@ -1,19 +1,20 @@
-const BaseComponent = require("../common/base.component");
+const BaseComponent = require('../common/base.component');
 
 class AddBoardComponent extends BaseComponent {
     constructor() {
-        super('form')
+        super('form');
     }
-    get input () {
-        return this.rootEl.$("//input[@data-testid='create-board-title-input']");
+    get input() {
+        return this.rootEl.$(
+            "//input[@data-testid='create-board-title-input']"
+        );
     }
-    get createButton () {
+    get createButton() {
         return $("//button[text()='Create']");
     }
-    get upgradeWorkspaceButton () {
+    get upgradeWorkspaceButton() {
         return $("//button[text()='Upgrade Workspace']");
     }
-
 }
 
 module.exports = AddBoardComponent;
