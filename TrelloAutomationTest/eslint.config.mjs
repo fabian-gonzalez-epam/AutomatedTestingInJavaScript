@@ -1,5 +1,5 @@
 import js from "@eslint/js";
-import eslintPluginExample from "./plugins/eslint-plugin-example.js";
+import eslintPluginExample from "./eslint/plugins/eslint-plugin-example.js";
 
 export default [
     
