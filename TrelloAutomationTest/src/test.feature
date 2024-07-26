@@ -5,7 +5,7 @@ Feature: accountability
     Scenario: Check accountability
         # Insert fixtures
         Given the following fixtures files are loaded:
-            | 10.contracts.yml            |
+            | 10.contracts.yml           |
             | 20.wallet.yml               |
             | 30.tax.yml |
 
