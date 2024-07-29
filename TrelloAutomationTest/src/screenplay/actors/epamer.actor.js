@@ -9,11 +9,11 @@ class EpamerActor extends BaseActor {
         //this.interrogation = new Interrogations()
     }
     
-    checkBoardExist() {
-        this.interrogation.checkBoardExist();
+    async checkBoardExist() {
+        await this.interrogation.checkBoardExist();
     }
-    addBoard() {
-        this.interaction.addBoard();
+    async addBoard() {
+        await this.interaction.addBoard();
     }
 }
 

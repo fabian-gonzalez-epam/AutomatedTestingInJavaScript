@@ -10,15 +10,15 @@ class BaseActor {
         this.interrogation = new Interrogations()
     }
 
-    login() {
-        this.interaction.login(this.username, this.password);
+    async login() {
+        await this.interaction.login(this.username, this.password);
     }
     
-    checkIfEnter() {
-        return this.interrogation.checkIfEnter()
+    async checkIfEnter() {
+        return await this.interrogation.checkIfEnter()
     }
-    checkIfNoEnter() {
-        return this.interrogation.checkIfNoEnter()
+    async checkIfNoEnter() {
+        return await this.interrogation.checkIfNoEnter()
     }
     
 

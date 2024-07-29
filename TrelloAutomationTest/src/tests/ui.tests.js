@@ -2,7 +2,7 @@ const {actor} = require('../screenplay')
 const { pages } = require('../po');
 
 describe("Test suite", () => {
-    it.only("Simple tests are call", async function() {
+    it("Simple tests are call", async function() {
         
     });
     it("Check incorrect login", async function() {
@@ -14,20 +14,22 @@ describe("Test suite", () => {
     
     }); 
 
-    it("Check correct login", async function() {
+    it.only("Check correct login", async function() {
         
         this.retries(1);
         await actor('epamer').login()
-        expect (await actor('epamer').checkIfEnter()).to.be.true 
+        let isLoggedin = await actor('epamer').checkIfEnter()
+        expect(isLoggedin).to.be.true 
     
     });
     
-    it("Add tenth board", async function() {
+    it.only("Add tenth board", async function() {
         this.retries(1);
 
         // Screenplay implementation
         await actor('epamer').addBoard()
-        //await expect (await actor('epamer').checkBoardExist()).to.be.true 
+        let boardExist = await actor('epamer').checkBoardExist()
+        expect(boardExist).to.be.true 
         
         /* await pages('dashboard').header.addButton.waitForDisplayed()
         await pages('dashboard').header.addButton.waitForEnabled()

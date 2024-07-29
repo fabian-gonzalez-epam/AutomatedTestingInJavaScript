@@ -33,6 +33,7 @@ class Interactions {
     }
     
     async addBoard() {
+        /*
         await $("//button[@data-testid='header-create-menu-button']").waitForDisplayed()
         await $("//button[@data-testid='header-create-menu-button']").waitForEnabled()
         await $("//button[@data-testid='header-create-menu-button']").click()
@@ -41,17 +42,17 @@ class Interactions {
         $("//span[text()='Create board']").click()
         $("//input[@data-testid='create-board-title-input']").waitForDisplayed()
         $("//input[@data-testid='create-board-title-input']").waitForEnabled()
-        $("//input[@data-testid='create-board-title-input']").setValue("Board")
+        $("//input[@data-testid='create-board-title-input']").setValue("Board") */
 
 
-        /* pages('dashboard').header.addButton.waitForDisplayed()
-        pages('dashboard').header.addButton.aitForEnabled()
-        pages('dashboard').header.addButton.click()
-        pages('dashboard').header.selection('create').click()
-        pages('dashboard').addBoard.input.waitForEnabled()
-        pages('dashboard').addBoard.input.setValue('Board 10')
-        pages('dashboard').addBoard.createButton.waitForEnabled()
-        pages('dashboard').addBoard.createButton.click() */
+        await pages('dashboard').header.addButton.waitForDisplayed()
+        await pages('dashboard').header.addButton.waitForEnabled()
+        await pages('dashboard').header.addButton.click()
+        await pages('dashboard').header.selection('create').click()
+        await pages('dashboard').addBoard.input.waitForEnabled()
+        await pages('dashboard').addBoard.input.setValue('Board 10')
+        await pages('dashboard').addBoard.createButton.waitForEnabled()
+        await pages('dashboard').addBoard.createButton.click()
     }
 }
 
