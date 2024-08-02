@@ -6,6 +6,7 @@
   "scripts": {
     "ui_test": "wdio run src/config/ui.conf.js",
     "api_test": "wdio run src/config/api.conf.js",
+    "ui_test_tag": "wdio run src/config/ui.conf.js --cucumberOpts.tagExpression",
     "test": "npm run ui_test && npm run api_test",
     "linters": "npx prettier . --write && npx esLint",
     "prepare": "cd .. && husky install TrelloAutomationTest/.husky",

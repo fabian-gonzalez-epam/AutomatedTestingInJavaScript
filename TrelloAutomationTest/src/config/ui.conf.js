@@ -91,7 +91,7 @@ exports.config = {
     // baseUrl: 'http://localhost:8080',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 100000,
+    waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -136,7 +136,7 @@ exports.config = {
             },
             sauceLabsSharableLinks: false,
             onlyFailures: false,
-            addConsoleLogs: true,
+            addConsoleLogs: false,
             realtimeReporting: true,
             showPreface: false,
             color: true
@@ -166,7 +166,8 @@ exports.config = {
         timeout: 60000
     }, */
     cucumberOpts: {
-        import: ['./src/features/step-definitions/*.js']
+        import: ['./src/features/step-definitions/*.js'],
+        timeout: 100000
     },
 
     //

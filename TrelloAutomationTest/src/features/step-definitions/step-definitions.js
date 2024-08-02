@@ -1,7 +1,12 @@
 const assert = require('assert');
-const {actor} = require('./../../screenplay')
+const { actor } = require('./../../screenplay');
 const { Given, When, Then } = require('@cucumber/cucumber');
 
-Given('I login with fabian_gonzalez@epam.com', async function () {
-    await actor('Epamer').login()
-})
+notLogged = true;
+
+Given('the user log in', async function () {
+    if (notLogged) {
+        await actor('epamer').login();
+        notLogged = false;
+    }
+});

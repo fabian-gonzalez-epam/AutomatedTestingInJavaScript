@@ -1,0 +1,2 @@
+./features/login.feature
+./features/addBoard.feature

@@ -1,9 +1,14 @@
-@login
-Feature: Login
-    As a developer in company I want to access to trello
+Feature: Sign in
+    Only people with a registered email in the database can have access
 
-    Scenario: EPAM worker login
+    @smoke
+    Scenario: Not valid user sign in
+        Given an user without a registered email in the database
+        When the user log in with valid credentials
+        Then the user receives an invitation to sign up
 
-        Given I login with fabian_gonzalez@epam.com
-        When I click login
-        Then I see the main dashboard
+    @smoke
+    Scenario: Valid User sign in
+        Given an user with a registered email in the database
+        When the user log in with valid credentials
+        Then the user sees the home page with all the workspaces
