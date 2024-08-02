@@ -4,7 +4,7 @@ Feature: Add board
     Background: The user is login
         Given the user log in
 
-    @smoke
+    @regression
     Scenario: Free suscriber user create his tenth board
         Given a 10 limit of boards in the user account
         And there are 9 boards
