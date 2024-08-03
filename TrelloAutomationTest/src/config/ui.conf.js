@@ -53,7 +53,7 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--start-maximized']
+            args: ['--start-maximized', '--headless', '--window-size=1920,1080']
         },
     }],
 
@@ -155,7 +155,7 @@ exports.config = {
             {
                 outputDir: './reports/allure-results/',
                 disableWebdriverStepsReporting: true,
-                disableWebdriverScreenshotsReporting: true,
+                disableWebdriverScreenshotsReporting: false,
                 disableMochaHooks:true
         }]
     ],
@@ -248,7 +248,7 @@ exports.config = {
         global.wdioExpect = global.expect;
         const chai = await import('chai');
         global.expect = chai.expect;
-    }
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -273,6 +273,11 @@ exports.config = {
      */
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
+    afterStep: async function (step, scenario, { error, duration, passed }, context) {
+        if (error) {
+          await browser.takeScreenshot();
+        }
+      }
 
 
     /**

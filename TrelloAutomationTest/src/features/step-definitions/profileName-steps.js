@@ -6,7 +6,7 @@ Given('the new username proposed is {string}', async function (status) {
     if (status == 'taken') {
         username = 'fabiangonzalez';
     } else {
-        username = 'fabiangonzalez195';
+        username = 'fabiangonzalez';
     }
     await actor('epamer');
 });
